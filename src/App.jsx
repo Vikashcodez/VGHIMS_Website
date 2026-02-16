@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import ContactUs from './pages/ContactUs'
 import  ModuleShowcase from './pages/Modules' 
 import AboutVGHIMS from './pages/About'
+import BookDemo from './pages/BookDemo'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/modules" element={<ModuleShowcase />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/about" element={<AboutVGHIMS />} />
+          <Route path="/book-demo" element={<BookDemo />} />
         </Routes>
         <Footer />
       </div>

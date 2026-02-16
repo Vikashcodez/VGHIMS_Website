@@ -77,7 +77,7 @@ const Header = () => {
 
           {/* Contact Button - Right (Desktop) */}
           <Link 
-            to="/contact" 
+            to="/book-demo" 
             className="hidden lg:block bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-2.5 rounded-full font-semibold hover:from-orange-600 hover:to-orange-700 transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg"
           >
             Book Demo
