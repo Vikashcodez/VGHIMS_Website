@@ -1,10 +1,7 @@
+import { Link } from 'react-router-dom'
 import heroImage from '../assets/hero.png'
 
 const Hero = () => {
-  const handleScheduleDemo = () => {
-    alert('Demo scheduled! Our team will contact you soon.')
-  }
-
   return (
     <section className="bg-blue-50 pt-28 pb-12">
       <div className="container mx-auto px-4 sm:px-8">
@@ -27,12 +24,12 @@ const Hero = () => {
               <p className="text-base sm:text-lg text-gray-600 mb-8 leading-relaxed">
                 Enterprise Hospitals Intelligence Management System (HIMS) engineered to support digitization, automation, interoperability, and regulatory compliance
               </p>
-              <button 
-                onClick={handleScheduleDemo}
-                className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-10 py-4 rounded-full text-base font-semibold hover:from-orange-600 hover:to-orange-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+              <Link 
+                to="/book-demo"
+                className="inline-block bg-gradient-to-r from-orange-500 to-orange-600 text-white px-10 py-4 rounded-full text-base font-semibold hover:from-orange-600 hover:to-orange-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 Schedule Demo
-              </button>
+              </Link>
             </div>
           </div>
         </div>
