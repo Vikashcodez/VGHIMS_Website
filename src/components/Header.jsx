@@ -53,9 +53,9 @@ const Header = () => {
           <nav className="hidden lg:block absolute left-1/2 transform -translate-x-1/2">
             <ul className="flex gap-8">
               <li>
-                <button onClick={() => scrollToSection('overview')} className="text-gray-700 font-medium hover:text-blue-600 transition-colors duration-300">
+                <Link to="/" className="text-gray-700 font-medium hover:text-blue-600 transition-colors duration-300">
                   Home
-                </button>
+                </Link>
               </li>
               <li>
                 <Link to="/modules" className="text-gray-700 font-medium hover:text-blue-600 transition-colors duration-300">
@@ -63,14 +63,14 @@ const Header = () => {
                 </Link>
               </li>
               <li>
-                <button onClick={() => scrollToSection('advanced')} className="text-gray-700 font-medium hover:text-blue-600 transition-colors duration-300">
+                <Link to="/about" className="text-gray-700 font-medium hover:text-blue-600 transition-colors duration-300">
                   About Us
-                </button>
+                </Link>
               </li>
               <li>
-                <button onClick={() => scrollToSection('financial')} className="text-gray-700 font-medium hover:text-blue-600 transition-colors duration-300">
+                <Link to="/contact" className="text-gray-700 font-medium hover:text-blue-600 transition-colors duration-300">
                   Contact
-                </button>
+                </Link>
               </li>
             </ul>
           </nav>
@@ -99,22 +99,27 @@ const Header = () => {
         {/* Mobile Menu */}
         <div className={`lg:hidden fixed inset-0 bg-white transition-transform duration-300 ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
           <nav className="flex flex-col items-center justify-center h-full space-y-8">
-            <button onClick={() => scrollToSection('overview')} className="text-2xl text-gray-700 font-medium hover:text-blue-600 transition-colors duration-300">
-              Overview
-            </button>
+            <Link 
+              to="/" 
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="text-2xl text-gray-700 font-medium hover:text-blue-600 transition-colors duration-300"
+            >
+              Home
+            </Link>
             <Link 
               to="/modules" 
               onClick={() => setIsMobileMenuOpen(false)}
               className="text-2xl text-gray-700 font-medium hover:text-blue-600 transition-colors duration-300"
             >
-              Clinical
+              Clinical Modules
             </Link>
-            <button onClick={() => scrollToSection('advanced')} className="text-2xl text-gray-700 font-medium hover:text-blue-600 transition-colors duration-300">
-              Advanced
-            </button>
-            <button onClick={() => scrollToSection('financial')} className="text-2xl text-gray-700 font-medium hover:text-blue-600 transition-colors duration-300">
-              Financial
-            </button>
+            <Link 
+              to="/about" 
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="text-2xl text-gray-700 font-medium hover:text-blue-600 transition-colors duration-300"
+            >
+              About Us
+            </Link>
             <Link 
               to="/contact" 
               onClick={() => setIsMobileMenuOpen(false)}
