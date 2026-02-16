@@ -58,25 +58,27 @@ const ContactPage = () => {
       });
   };
 
+
+
   const contactInfo = [
     {
       icon: Building2,
       title: "Visit Our Office",
-      details: ["123 Healthcare Innovation Hub", "Tech Park, Suite 400", "New York, NY 10001"],
+      details: ["VoiceGate Technologies India Pvt Ltd", "Navbahar, 10-3-299/2/B, Humayun Nagar","Hyderabad, 500028"],
       color: "blue"
     },
     {
       icon: Mail,
       title: "Email Us",
-      details: ["info@voicegate.com", "support@vghims.com"],
-      href: "mailto:info@voicegate.com",
+      details: ["info@voicegateindia.com"],
+      href: "mailto:info@voicegateindia.com",
       color: "purple"
     },
     {
       icon: Phone,
       title: "Call Us",
-      details: ["+1 (555) 123-4567", "+1 (555) 987-6543"],
-      href: "tel:+15551234567",
+      details: ["+91 4023537863"],
+      href: "tel:+914023537863",
       color: "emerald"
     }
   ];
