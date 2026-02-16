@@ -54,22 +54,22 @@ const Header = () => {
             <ul className="flex gap-8">
               <li>
                 <button onClick={() => scrollToSection('overview')} className="text-gray-700 font-medium hover:text-blue-600 transition-colors duration-300">
-                  Overview
+                  Home
                 </button>
               </li>
               <li>
-                <button onClick={() => scrollToSection('clinical')} className="text-gray-700 font-medium hover:text-blue-600 transition-colors duration-300">
-                  Clinical
-                </button>
+                <Link to="/modules" className="text-gray-700 font-medium hover:text-blue-600 transition-colors duration-300">
+                  Clinical Modules
+                </Link>
               </li>
               <li>
                 <button onClick={() => scrollToSection('advanced')} className="text-gray-700 font-medium hover:text-blue-600 transition-colors duration-300">
-                  Advanced
+                  About Us
                 </button>
               </li>
               <li>
                 <button onClick={() => scrollToSection('financial')} className="text-gray-700 font-medium hover:text-blue-600 transition-colors duration-300">
-                  Financial
+                  Contact
                 </button>
               </li>
             </ul>
@@ -80,7 +80,7 @@ const Header = () => {
             to="/contact" 
             className="hidden lg:block bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-2.5 rounded-full font-semibold hover:from-orange-600 hover:to-orange-700 transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg"
           >
-            Contact Us
+            Book Demo
           </Link>
 
           {/* Mobile Menu Button */}
@@ -102,9 +102,13 @@ const Header = () => {
             <button onClick={() => scrollToSection('overview')} className="text-2xl text-gray-700 font-medium hover:text-blue-600 transition-colors duration-300">
               Overview
             </button>
-            <button onClick={() => scrollToSection('clinical')} className="text-2xl text-gray-700 font-medium hover:text-blue-600 transition-colors duration-300">
+            <Link 
+              to="/modules" 
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="text-2xl text-gray-700 font-medium hover:text-blue-600 transition-colors duration-300"
+            >
               Clinical
-            </button>
+            </Link>
             <button onClick={() => scrollToSection('advanced')} className="text-2xl text-gray-700 font-medium hover:text-blue-600 transition-colors duration-300">
               Advanced
             </button>
