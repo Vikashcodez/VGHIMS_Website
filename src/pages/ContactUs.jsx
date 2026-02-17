@@ -27,9 +27,9 @@ const ContactPage = () => {
 
   // ========== EMAIL JS CONFIGURATION ==========
   // Replace these with your actual EmailJS credentials
-  const SERVICE_ID = 'service_l8we60e'; 
-  const TEMPLATE_ID = 'template_ryzjvc4';
-  const PUBLIC_KEY = 'fdgkTGpP2SeawVlT_';
+  const SERVICE_ID = 'service_zkbxqlc'; 
+  const TEMPLATE_ID = 'template_er3iwtn';
+  const PUBLIC_KEY = 'JvM8s418c960NOhk1';
   // =============================================
 
   const handleInputChange = (e) => {
