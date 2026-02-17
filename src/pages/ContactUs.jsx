@@ -132,7 +132,12 @@ const ContactPage = () => {
             ))}
 
             {/* Map Placeholder / Illustration */}
-            <div className="relative h-64 bg-slate-200 rounded-2xl overflow-hidden border border-slate-200 group cursor-pointer hover:shadow-xl transition-all">
+            <a 
+              href="https://www.google.com/maps/place/VoiceGate+Technologies+India+Pvt.+Ltd/@17.3985385,78.4507593,255m/data=!3m1!1e3!4m6!3m5!1s0x3bcb9716cfffff8b:0x21f442363ec0c72d!8m2!3d17.396784!4d78.4479551!16s%2Fg%2F1tftvdyj?entry=ttu&g_ep=EgoyMDI2MDIxMS4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block relative h-64 bg-slate-200 rounded-2xl overflow-hidden border border-slate-200 group cursor-pointer hover:shadow-xl transition-all"
+            >
               <img 
                 src="https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
                 alt="Office Location" 
@@ -144,7 +149,7 @@ const ContactPage = () => {
                   <span className="font-semibold">View on Google Maps</span>
                 </div>
               </div>
-            </div>
+            </a>
           </div>
 
           {/* Right Column: Contact Form */}
