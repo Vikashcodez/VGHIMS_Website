@@ -27,7 +27,7 @@ const Footer = () => {
                 </div>
               </Link>
               <p className="text-gray-400 text-sm leading-relaxed">
-                Next-generation Hospital Information Management System engineered for smart healthcare delivery.
+                Next-generation Hospitals Intelligence Management System engineered for smart healthcare delivery.
               </p>
             </div>
 
