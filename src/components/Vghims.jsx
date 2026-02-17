@@ -118,10 +118,10 @@ const WhyUs = () => {
                   VGHIMS is a next-generation enterprise Hospital Information System engineered to support digitization, automation, and regulatory compliance.
                 </p>
                 
-                <div className="inline-flex items-center gap-2 text-indigo-600 font-semibold cursor-pointer group/link">
+                {/* <div className="inline-flex items-center gap-2 text-indigo-600 font-semibold cursor-pointer group/link">
                   Explore Features 
                   <ArrowRight className="w-4 h-4 transition-transform group-hover/link:translate-x-1" />
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
