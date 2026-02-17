@@ -40,6 +40,11 @@ const Header = () => {
     setIsMobileMenuOpen(false)
   }
 
+  const handleLinkClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+    setIsMobileMenuOpen(false)
+  }
+
   // Close menu when clicking outside or on escape key
   useEffect(() => {
     const handleEscape = (e) => {
@@ -61,7 +66,7 @@ const Header = () => {
         <div className="container mx-auto px-4 sm:px-8">
           <div className="flex justify-between items-center max-w-7xl mx-auto">
             {/* Logo - Left */}
-            <Link to="/" className="flex items-center gap-3 z-50">
+          <Link to="/" onClick={handleLinkClick} className="flex items-center gap-3 z-50">
               <img src={logo} alt="VGHiMS Logo" className="h-12 sm:h-16 w-auto" />
               <div className="flex flex-col">
                 <h1 className="text-xl sm:text-2xl md:text-3xl font-black tracking-[2px] sm:tracking-[3px] bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent uppercase">
@@ -77,22 +82,22 @@ const Header = () => {
             <nav className="hidden lg:block absolute left-1/2 transform -translate-x-1/2">
               <ul className="flex gap-8">
                 <li>
-                  <Link to="/" className="text-gray-700 font-medium hover:text-blue-600 transition-colors duration-300">
+                  <Link to="/" onClick={handleLinkClick} className="text-gray-700 font-medium hover:text-blue-600 transition-colors duration-300">
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link to="/modules" className="text-gray-700 font-medium hover:text-blue-600 transition-colors duration-300">
+                  <Link to="/modules" onClick={handleLinkClick} className="text-gray-700 font-medium hover:text-blue-600 transition-colors duration-300">
                     Clinical Modules
                   </Link>
                 </li>
                 <li>
-                  <Link to="/about" className="text-gray-700 font-medium hover:text-blue-600 transition-colors duration-300">
+                  <Link to="/about" onClick={handleLinkClick} className="text-gray-700 font-medium hover:text-blue-600 transition-colors duration-300">
                     About Us
                   </Link>
                 </li>
                 <li>
-                  <Link to="/contact" className="text-gray-700 font-medium hover:text-blue-600 transition-colors duration-300">
+                  <Link to="/contact" onClick={handleLinkClick} className="text-gray-700 font-medium hover:text-blue-600 transition-colors duration-300">
                     Contact
                   </Link>
                 </li>
@@ -102,6 +107,7 @@ const Header = () => {
             {/* Contact Button - Right (Desktop) */}
             <Link 
               to="/book-demo" 
+              onClick={handleLinkClick}
               className="hidden lg:block bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-2.5 rounded-full font-semibold hover:from-orange-600 hover:to-orange-700 transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg"
             >
               Book Demo
@@ -160,35 +166,35 @@ const Header = () => {
         <nav className="flex flex-col items-center justify-center h-screen space-y-8" onClick={(e) => e.stopPropagation()}>
           <Link 
             to="/" 
-            onClick={() => setIsMobileMenuOpen(false)}
+            onClick={handleLinkClick}
             className="text-2xl text-gray-700 font-medium hover:text-blue-600 transition-colors duration-300"
           >
             Home
           </Link>
           <Link 
             to="/modules" 
-            onClick={() => setIsMobileMenuOpen(false)}
+            onClick={handleLinkClick}
             className="text-2xl text-gray-700 font-medium hover:text-blue-600 transition-colors duration-300"
           >
             Clinical Modules
           </Link>
           <Link 
             to="/about" 
-            onClick={() => setIsMobileMenuOpen(false)}
+            onClick={handleLinkClick}
             className="text-2xl text-gray-700 font-medium hover:text-blue-600 transition-colors duration-300"
           >
             About Us
           </Link>
           <Link 
             to="/contact" 
-            onClick={() => setIsMobileMenuOpen(false)}
+            onClick={handleLinkClick}
             className="text-2xl text-gray-700 font-medium hover:text-blue-600 transition-colors duration-300"
           >
             Contact Us
           </Link>
           <Link 
             to="/book-demo" 
-            onClick={() => setIsMobileMenuOpen(false)}
+            onClick={handleLinkClick}
             className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-3 rounded-full text-xl font-semibold hover:from-orange-600 hover:to-orange-700 transform hover:scale-105 transition-all duration-300 shadow-lg"
           >
             Book Demo
