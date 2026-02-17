@@ -92,12 +92,12 @@ const AboutVGHIMS = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl text-white font-semibold shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 hover:from-orange-600 hover:to-orange-700">
+            {/* <button className="px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl text-white font-semibold shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 hover:from-orange-600 hover:to-orange-700">
               Explore Platform <ArrowRight className="w-4 h-4" />
-            </button>
-            <button className="px-8 py-4 bg-white border border-slate-200 rounded-xl text-gray-700 font-semibold hover:bg-gray-50 transition-all duration-300 shadow-md">
+            </button> */}
+            {/* <button className="px-8 py-4 bg-white border border-slate-200 rounded-xl text-gray-700 font-semibold hover:bg-gray-50 transition-all duration-300 shadow-md">
               Our Story
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
