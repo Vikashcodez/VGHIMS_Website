@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import logo from '../assets/VGHiMS_Logo.png'
+import logo from '../assets/VGHMS_Logo.png'
 
 const Header = () => {
   const location = useLocation()
@@ -39,11 +39,11 @@ const Header = () => {
           {/* Logo - Left */}
           <Link to="/" className="flex items-center gap-3 z-50">
             <img src={logo} alt="VGHiMS Logo" className="h-12 sm:h-16 w-auto" />
-            <div className="hidden sm:flex flex-col">
-              <h1 className="text-2xl sm:text-3xl font-black tracking-[3px] bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent uppercase">
+            <div className="flex flex-col">
+              <h1 className="text-xl sm:text-2xl md:text-3xl font-black tracking-[2px] sm:tracking-[3px] bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent uppercase">
                 VGHIMS
               </h1>
-              <p className="text-xs text-gray-600 font-medium tracking-wider italic">
+              <p className="text-[10px] sm:text-xs text-gray-600 font-medium tracking-wider italic">
                 Intelligent ERP for Hospitals
               </p>
             </div>
@@ -123,9 +123,16 @@ const Header = () => {
             <Link 
               to="/contact" 
               onClick={() => setIsMobileMenuOpen(false)}
-              className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-3 rounded-full text-xl font-semibold hover:from-orange-600 hover:to-orange-700 transform hover:scale-105 transition-all duration-300 shadow-lg"
+              className="text-2xl text-gray-700 font-medium hover:text-blue-600 transition-colors duration-300"
             >
               Contact Us
+            </Link>
+            <Link 
+              to="/book-demo" 
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-3 rounded-full text-xl font-semibold hover:from-orange-600 hover:to-orange-700 transform hover:scale-105 transition-all duration-300 shadow-lg"
+            >
+              Book Demo
             </Link>
           </nav>
         </div>

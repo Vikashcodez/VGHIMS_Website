@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Linkedin, Twitter } from 'lucide-react'
-import logo from '../assets/VGHiMS_Logo.png'
+import logo from '../assets/VGHMS_Logo.png'
 
 const Footer = () => {
   const scrollToTop = () => {

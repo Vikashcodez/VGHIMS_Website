@@ -44,14 +44,14 @@ const WhyVoiceGate = () => {
 
   // Defined styles object to ensure Tailwind JIT compatibility
   const featureStyles = {
-    red: {
-      bg: 'bg-red-50/80',
-      text: 'text-red-600',
-      border: 'border-red-200',
-      gradient: 'from-red-500 to-rose-600',
-      shadow: 'shadow-red-500/20',
-      pillBg: 'bg-red-100',
-      solidBg: 'bg-red-600'
+    slate: {
+      bg: 'bg-slate-50/80',
+      text: 'text-slate-700',
+      border: 'border-slate-300',
+      gradient: 'from-slate-600 to-slate-800',
+      shadow: 'shadow-slate-500/20',
+      pillBg: 'bg-slate-100',
+      solidBg: 'bg-slate-700'
     },
     blue: {
       bg: 'bg-blue-50/80',
@@ -103,7 +103,7 @@ const WhyVoiceGate = () => {
         { label: "Success Rate", value: "100%", icon: CheckCircle2 }
       ],
       capabilities: ["Redundant Architecture", "Auto-failover", "24/7 Monitoring"],
-      style: featureStyles.red
+      style: featureStyles.slate
     },
     {
       id: 1,
@@ -291,12 +291,12 @@ const WhyVoiceGate = () => {
                   </div>
 
                   {/* Metrics Grid */}
-                  <div className="grid grid-cols-3 gap-4 mb-10">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
                     {activeData.metrics.map((metric, idx) => (
-                      <div key={idx} className="bg-white/80 backdrop-blur-sm rounded-xl p-5 border border-white shadow-sm hover:shadow-md transition-shadow">
+                      <div key={idx} className="bg-white/80 backdrop-blur-sm rounded-xl p-4 sm:p-5 border border-white shadow-sm hover:shadow-md transition-shadow">
                         <metric.icon className={`w-5 h-5 mb-2 ${activeStyle.text}`} />
-                        <div className="text-3xl font-bold text-slate-900 mb-1 tracking-tight">{metric.value}</div>
-                        <div className="text-xs text-slate-500 font-medium uppercase tracking-wider">{metric.label}</div>
+                        <div className="text-2xl sm:text-3xl font-bold text-slate-900 mb-1 tracking-tight break-words">{metric.value}</div>
+                        <div className="text-xs text-slate-500 font-medium uppercase tracking-wider break-words">{metric.label}</div>
                       </div>
                     ))}
                   </div>
