@@ -1,5 +1,4 @@
-import React, { useState, useRef } from 'react';
-import emailjs from '@emailjs/browser';
+import React, { useState } from 'react';
 import { 
   User, 
   Mail, 
@@ -17,8 +16,8 @@ import {
 } from 'lucide-react';
 
 const BookDemo = () => {
-  const form = useRef();
   const [status, setStatus] = useState('idle'); // idle, loading, success, error
+  const [errorMessage, setErrorMessage] = useState('');
   const [formData, setFormData] = useState({
     user_name: '',
     user_email: '',
@@ -29,48 +28,57 @@ const BookDemo = () => {
     message: ''
   });
 
-  // ========== EMAIL JS CONFIGURATION ==========
-  // Replace these with your actual EmailJS credentials
-  const SERVICE_ID = 'service_zkbxqlc'; 
-  const TEMPLATE_ID = 'template_o3ed0di';
-  const PUBLIC_KEY = 'JvM8s418c960NOhk1';
-  // =============================================
-
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
     
     // Basic validation check
     const { user_name, user_email, phone_number, company, subject, message } = formData;
     if (!user_name || !user_email || !phone_number || !company || !subject || !message) {
+      setErrorMessage('Please fill all required fields and try again.');
       setStatus('error');
       setTimeout(() => setStatus('idle'), 5000);
       return;
     }
 
     setStatus('loading');
+    setErrorMessage('');
 
-    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
-      .then((result) => {
-          console.log(result.text);
-          setStatus('success');
-          setFormData({ 
-            user_name: '', 
-            user_email: '', 
-            phone_number: '',
-            company: '',
-            address: '',
-            subject: '',
-            message: '' 
-          });
-      }, (error) => {
-          console.log(error.text);
-          setStatus('error');
+    try {
+      const response = await fetch('/api/send-demo', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        setStatus('success');
+        setFormData({ 
+          user_name: '', 
+          user_email: '', 
+          phone_number: '',
+          company: '',
+          address: '',
+          subject: '',
+          message: '' 
+        });
+      } else {
+        setErrorMessage(result.message || 'Unable to submit your request at this moment. Please try again.');
+        setStatus('error');
+      }
+    } catch (error) {
+      console.error('Error sending demo request:', error);
+      setErrorMessage('Unable to connect to the server. Please check your connection and try again.');
+      setStatus('error');
+    }
   };
 
   return (
@@ -145,16 +153,16 @@ const BookDemo = () => {
               </div>
             )}
             {status === 'error' && (
-              <div className="mb-6 bg-red-50 border border-red-200 rounded-xl p-4 flex items-center gap-3 text-red-700">
+              <div className="mb-6 bg-red-50 border border-red-200 rounded-xl p-4 flex items-center gap-3 text-red-700 animate-in fade-in duration-300">
                 <AlertCircle className="w-5 h-5 flex-shrink-0" />
                 <div>
                   <h4 className="font-bold">Submission Failed</h4>
-                  <p className="text-sm">Please fill all required fields and try again.</p>
+                  <p className="text-sm">{errorMessage || 'Please fill all required fields and try again.'}</p>
                 </div>
               </div>
             )}
 
-            <form ref={form} onSubmit={sendEmail} className="space-y-5">
+            <form onSubmit={sendEmail} className="space-y-5">
               
               {/* Row 1: Name & Email */}
               <div className="grid md:grid-cols-2 gap-5">
